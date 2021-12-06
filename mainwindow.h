@@ -20,9 +20,12 @@ public:
     void on_positionChange(qint64);
     void loadSongs(QString);
     void onListItemDoubleClicked(QListWidgetItem*);
+    bool isPause;
+    bool isMuted;
     QString path;
     QString duration;
     QMediaPlayer *player;
+    QListWidgetItem* curridx;
     ~MainWindow();
 
 private slots:
@@ -35,6 +38,12 @@ private slots:
     void on_actionSet_Songs_Path_triggered();
 
     void on_actionCurrent_Working_Path_triggered();
+
+    void on_nextButton_clicked();
+
+    void on_previousButton_clicked();
+
+    void on_volumeButton_clicked();
 
 private:
     Ui::MainWindow *ui;
