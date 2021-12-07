@@ -6,5 +6,10 @@
         <file>icons/next.jpg</file>
         <file>icons/play.jpg</file>
         <file>icons/mute.png</file>
+        <file>icons/refresh.jpg</file>
+        <file>icons/cwd.png</file>
+        <file>icons/about.png</file>
+        <file>icons/fileOpen.jpeg</file>
+        <file>icons/download.png</file>
     </qresource>
 </RCC>

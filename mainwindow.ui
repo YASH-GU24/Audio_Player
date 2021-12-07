@@ -16,25 +16,99 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Type Name Or Youtube Link</string>
-          </property>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Type Name Or Youtube Link</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="linkOrName"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="downloadButton">
+              <property name="text">
+               <string>Download</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QRadioButton" name="byLink">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>By Youtube Link</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="byName">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>By Name</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QPushButton" name="SetPath">
+                <property name="text">
+                 <string>Set Songs Path</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_2">
+                <property name="text">
+                 <string>Refresh List</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit"/>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton">
-          <property name="text">
-           <string>Download</string>
-          </property>
-         </widget>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="downloadProgress">
+            <property name="text">
+             <string>Download Progress</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QProgressBar" name="downProgressBar">
+            <property name="value">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
@@ -169,6 +243,8 @@
     </property>
     <addaction name="actionSet_Songs_Path"/>
     <addaction name="actionCurrent_Working_Path"/>
+    <addaction name="separator"/>
+    <addaction name="actionRefresh_List"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -181,18 +257,39 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionSet_Songs_Path">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/icons/icons/fileOpen.jpeg</normaloff>:/new/icons/icons/fileOpen.jpeg</iconset>
+   </property>
    <property name="text">
     <string>Set Songs Path</string>
    </property>
   </action>
   <action name="actionCurrent_Working_Path">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/icons/icons/cwd.png</normaloff>:/new/icons/icons/cwd.png</iconset>
+   </property>
    <property name="text">
     <string>Current Working Path</string>
    </property>
   </action>
   <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/icons/icons/about.png</normaloff>:/new/icons/icons/about.png</iconset>
+   </property>
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionRefresh_List">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/icons/icons/refresh.jpg</normaloff>:/new/icons/icons/refresh.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Refresh List</string>
    </property>
   </action>
  </widget>

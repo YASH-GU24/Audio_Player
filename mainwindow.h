@@ -5,6 +5,13 @@
 #include <QWidget>
 #include <QMediaPlayer>
 #include <QListWidget>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QUrl>
+#include <QDateTime>
+#include <QFile>
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,12 +27,16 @@ public:
     void on_positionChange(qint64);
     void loadSongs(QString);
     void onListItemDoubleClicked(QListWidgetItem*);
+    void doDownload(QString);
+    QNetworkReply *reply;
     bool isPause;
     bool isMuted;
     QString path;
     QString duration;
+    QString QfileName;
     QMediaPlayer *player;
     QListWidgetItem* curridx;
+    QNetworkAccessManager *manager;
     ~MainWindow();
 
 private slots:
@@ -45,6 +56,18 @@ private slots:
 
     void on_volumeButton_clicked();
 
+    void replyFinished (QNetworkReply *reply);
+    void on_downloadButton_clicked();
+
+    void on_SetPath_clicked();
+
+    void on_Refresh_clicked();
+
+    void on_actionRefresh_List_triggered();
+
+    void on_actionAbout_triggered();
+
+    void downloadProgress(qint64, qint64);
 private:
     Ui::MainWindow *ui;
 };
